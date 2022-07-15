@@ -7,5 +7,6 @@
   "productionClientSourceMap": false,
   "serverComponent": "./src/StaticApp.tsx",
   "skeletonComponent": "./src/skeleton/Skeleton.tsx",
-  "registerStatik": "./data/statik.ts"
+  "registerStatik": "./data/statik.ts",
+  "urls": ["/", "/404.html"]
 }
