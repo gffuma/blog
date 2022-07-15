@@ -1,0 +1,36 @@
+import './index.scss'
+import ReactDOM from 'react-dom/client'
+import { QueryClient, hydrate, QueryClientProvider } from 'react-query'
+import { BrowserRouter } from 'react-router-dom'
+import App from './App'
+import { StrictMode } from 'react'
+
+const queryClient = new QueryClient({
+  defaultOptions: {
+    queries: {
+      cacheTime: Infinity,
+      refetchOnWindowFocus: false,
+      refetchOnReconnect: false,
+      refetchInterval: false,
+      refetchIntervalInBackground: false,
+      refetchOnMount: false,
+      staleTime: Infinity,
+      suspense: true,
+      retry: false,
+    },
+  },
+})
+
+hydrate(queryClient, (window as any).__INITIAL_DATA__)
+delete (window as any).__INITIAL_DATA__
+
+ReactDOM.hydrateRoot(
+  document.getElementById('root')!,
+  <StrictMode>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <App />
+      </BrowserRouter>
+    </QueryClientProvider>
+  </StrictMode>
+)

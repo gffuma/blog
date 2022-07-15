@@ -1,0 +1,27 @@
+{
+  "name": "blog",
+  "private": true,
+  "scripts": {
+    "dev": "pluffa dev",
+    "build": "pluffa build",
+    "start": "pluffa start",
+    "staticize": "pluffa staticize"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-markdown": "^8.0.3",
+    "react-query": "^3.39.1",
+    "react-router-dom": "^6.3.0",
+    "rehype-highlight": "^5.0.2",
+    "sass": "^1.53.0"
+  },
+  "devDependencies": {
+    "@pluffa/node": "^0.1.0",
+    "@types/node": "^18.0.4",
+    "@types/react": "^18.0.15",
+    "@types/react-dom": "^18.0.6",
+    "pluffa": "^0.1.0"
+  }
+}

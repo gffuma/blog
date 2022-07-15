@@ -1,0 +1,9 @@
+.theme-switcher {
+  background-color: transparent;
+  padding: 0;
+  border: 0px;
+  user-select: none;
+  outline: none;
+  font-size: 2rem;
+  cursor: pointer;
+}

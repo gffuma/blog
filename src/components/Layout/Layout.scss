@@ -1,0 +1,24 @@
+.container {
+  margin: auto;
+  max-width: 45rem;
+  padding: 0 10px;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  .sidebar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .sidebar-links {
+      margin-left: 50px;
+      justify-content: center;
+      display: flex;
+      align-items: center;
+    }
+  }
+}

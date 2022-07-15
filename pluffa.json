@@ -1,0 +1,8 @@
+{
+  "$schema": "https://cdn.giova.fun/pluffa/schema.json",
+  "runtime": "node",
+  "clientEntry": "./src/index.tsx",
+  "serverComponent": "./src/StaticApp.tsx",
+  "skeletonComponent": "./src/Skeleton.tsx",
+  "registerStatik": "./data/statik.ts"
+}
