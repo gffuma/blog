@@ -12,7 +12,8 @@ export default function Post() {
   return (
     <div className="post">
       <Helmet defer={false}>
-        <title>{post.data.title} ~ Gio Va</title>
+        <title>{`${post.data.title} ~ Gio Va`}</title>
+        <meta name="description" content={post.data.subtitle} />
       </Helmet>
       <h1>{post.data.title}</h1>
       <div className="post-date">

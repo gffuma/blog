@@ -10,6 +10,10 @@ export default function Layout() {
     <>
       <Helmet defer={false}>
         <title>Gio Va</title>
+        <meta
+          name="description"
+          content="My name is Gio Va and i am a programmer."
+        />
       </Helmet>
       <Suspense fallback={<div>Loading...</div>}>
         <div className="container">
