@@ -3,6 +3,6 @@
   "runtime": "node",
   "clientEntry": "./src/index.tsx",
   "serverComponent": "./src/StaticApp.tsx",
-  "skeletonComponent": "./src/Skeleton.tsx",
+  "skeletonComponent": "./src/skeleton/Skeleton.tsx",
   "registerStatik": "./data/statik.ts"
 }

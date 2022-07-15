@@ -5,6 +5,6 @@ slug: blog-no-js
 date: 2022-07-14
 ---
 
-## Just rendering markdown
+# Just rendering markdown
 
 So cool ~~you need js to see here~~ no lol

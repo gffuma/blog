@@ -1,6 +1,6 @@
 import './Layout.scss'
 import { Suspense } from 'react'
-import { Outlet } from 'react-router-dom'
+import { Link, Outlet } from 'react-router-dom'
 import ThemeSwitcher from '../ThemeSwitcher'
 
 export default function Layout() {
@@ -9,9 +9,12 @@ export default function Layout() {
       <div className="container">
         <header>
           <div className="sidebar">
-            <h1>Gio Va</h1>
-            <div className='sidebar-links'>
+            <Link to="/" className="home-link">
+              <h1>Gio Va</h1>
+            </Link>
+            <div className="sidebar-links">
               <a href="https://github.com/gffuma">GitHub</a>
+              <a href="https://twitter.com/gffuma">Twitter</a>
             </div>
           </div>
           <ThemeSwitcher />

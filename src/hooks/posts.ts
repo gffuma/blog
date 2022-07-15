@@ -1,10 +1,11 @@
 import { useQuery } from 'react-query'
 import statik from '@pluffa/statik'
+import { Post, PostPreview } from '../types'
 
 export function usePosts() {
-  return useQuery('posts', () => statik('/posts')).data
+  return useQuery<PostPreview[]>('posts', () => statik('/posts')).data!
 }
 
 export function usePost(slug: string) {
-  return useQuery(['posts', slug], () => statik(`/posts/${slug}`)).data
+  return useQuery<Post>(['posts', slug], () => statik(`/posts/${slug}`)).data!
 }

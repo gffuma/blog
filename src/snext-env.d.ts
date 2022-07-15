@@ -17,6 +17,6 @@ declare module "\*.png" {
 
 declare const process: {
   env: {
-    NOD_ENV: 'production' | 'development'
+    NODE_ENV: 'production' | 'development'
   }
 }

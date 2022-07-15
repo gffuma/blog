@@ -1,6 +1,7 @@
 import './Home.scss'
 import Markdown from '../../components/Markdown'
 import { usePosts } from '../../hooks/posts'
+import PostListItem from '../../components/PostListItem'
 
 const tagline = `
 \`\`\`js
@@ -16,11 +17,15 @@ while (daysLeft) {
 
 export default function App() {
   const posts = usePosts()
-  console.log(posts)
   return (
     <div>
       <div className="home-banner">
         <Markdown md={tagline} />
+      </div>
+      <div className='posts-list'>
+        {posts.map((post) => (
+          <PostListItem key={post.data.slug} post={post} />
+        ))}
       </div>
     </div>
   )

@@ -7,3 +7,6 @@
   font-size: 2rem;
   cursor: pointer;
 }
+.theme-switcher-hidden {
+  display: none;
+}

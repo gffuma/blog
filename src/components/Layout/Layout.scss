@@ -1,7 +1,7 @@
 .container {
   margin: auto;
   max-width: 45rem;
-  padding: 0 10px;
+  padding: 0 1rem;
 }
 
 header {
@@ -14,11 +14,23 @@ header {
     display: flex;
     justify-content: center;
     align-items: center;
+    a.home-link {
+      text-decoration: none;
+    }
+    a.home-link:hover {
+      text-decoration: none;
+    }
     .sidebar-links {
-      margin-left: 50px;
+      margin-left: 2rem;
       justify-content: center;
       display: flex;
       align-items: center;
+      a {
+        margin-left: 1rem;
+      }
+      a:first-child {
+        margin-left: 0;
+      }
     }
   }
 }

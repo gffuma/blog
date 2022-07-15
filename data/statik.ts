@@ -29,7 +29,7 @@ export default function registerStatik(router: Router) {
       const parsed = matter(md)
       return {
         data: parsed.data,
-        content: parsed.data,
+        content: parsed.content,
       }
     }
   )
