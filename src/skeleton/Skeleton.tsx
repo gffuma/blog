@@ -1,3 +1,4 @@
+import { Helmet } from 'react-helmet'
 import find from 'lodash/find'
 import path from 'path'
 import fs from 'fs'
@@ -18,8 +19,9 @@ export default function Skeleton({ appHtml, entrypoints }: SkeletonProps) {
       'utf-8'
     )
   }
+  const helmet = Helmet.renderStatic()
   return (
-    <html lang='en' data-theme="dark">
+    <html lang="en" data-theme="dark">
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -40,7 +42,10 @@ export default function Skeleton({ appHtml, entrypoints }: SkeletonProps) {
           dangerouslySetInnerHTML={{
             __html: inlineJS,
           }}
-        />
+      />
+        {helmet.title.toComponent()}
+        {helmet.meta.toComponent()}
+        {helmet.link.toComponent()}
       </head>
       <body>
         <div

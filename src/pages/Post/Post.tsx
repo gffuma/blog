@@ -1,4 +1,5 @@
 import dayjs from 'dayjs'
+import { Helmet } from 'react-helmet'
 import { useParams } from 'react-router-dom'
 import Markdown from '../../components/Markdown'
 import { usePost } from '../../hooks/posts'
@@ -8,9 +9,11 @@ export default function Post() {
   const { slug } = useParams()
   const post = usePost(slug!)
 
-  console.log(post)
   return (
-    <div className='post'>
+    <div className="post">
+      <Helmet defer={false}>
+        <title>{post.data.title} ~ Gio Va</title>
+      </Helmet>
       <h1>{post.data.title}</h1>
       <div className="post-date">
         {dayjs(post.data.date).format('DD MMMM, YYYY')}
