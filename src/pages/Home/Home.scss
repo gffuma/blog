@@ -1,4 +1,6 @@
-.home-banner {
+@use 'sass:meta';
+
+.hban {
   margin: 0;
   padding: 0;
   pre {
@@ -8,6 +10,7 @@
     padding: 0 !important;
     background-color: var(--bg) !important;
     font-size: 1.15rem;
+    overflow: hidden;
   }
 }
 .posts-list {
@@ -15,9 +18,18 @@
 }
 
 @media (max-width: 600px) {
-  .home-banner {
+  .hban {
     code {
       font-size: 0.95rem;
     }
   }
+}
+
+html[data-theme='light'] .hban {
+  @include meta.load-css('node_modules/highlight.js/styles/github.css');
+}
+html[data-theme='dark'] .hban {
+  @include meta.load-css(
+    'node_modules/highlight.js/styles/tokyo-night-dark.css'
+  );
 }

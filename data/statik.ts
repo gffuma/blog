@@ -1,4 +1,5 @@
 import fs from 'fs/promises'
+import orderBy from 'lodash/orderBy'
 import path from 'path'
 import matter from 'gray-matter'
 import { Router } from 'itty-router'
@@ -15,7 +16,7 @@ export default function registerStatik(router: Router) {
       const parsed = matter(md)
       posts.push({ data: parsed.data })
     }
-    return posts
+    return orderBy(posts, ['data.date'], ['desc'])
   })
 
   router.get(

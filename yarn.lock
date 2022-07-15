@@ -1172,10 +1172,10 @@
     "@jridgewell/resolve-uri" "^3.0.3"
     "@jridgewell/sourcemap-codec" "^1.4.10"
 
-"@pluffa/build-tools@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@pluffa/build-tools/-/build-tools-0.1.0.tgz#51188b1f2368fe126619f5757f29a6259a34f410"
-  integrity sha512-P/gSX2531rL+qQPsBOAt1Gh5gJJGxIjmiN2pevhJ0q2M3dc1OTyNt4q9yLniiLL0CT7/4b3zFybmoXvY74Ug5g==
+"@pluffa/build-tools@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@pluffa/build-tools/-/build-tools-0.2.0.tgz#75bcbeb9df47ef08fcf5b33615af65cfce0ba9d7"
+  integrity sha512-W9vkTDlP3jYPwEITJjdHAzGTCauC5htwrPbXyLP1HUq6eiEQqbxmPLyKhn3SZesF6AKk9a/xykvExwf7c7XYyQ==
   dependencies:
     "@babel/core" "^7.18.6"
     "@babel/preset-react" "^7.18.6"
@@ -1221,12 +1221,12 @@
   dependencies:
     stream-buffers "^3.0.2"
 
-"@pluffa/node@^0.1.0":
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/@pluffa/node/-/node-0.1.0.tgz#eff17d5893bbf438b337a2882884b667b4ebf2d6"
-  integrity sha512-SsgiBVry4YvA0XC2Vmhr1AUbF0ACKYGc+o70YBvs2pd84OeixreByC9zlIUsBZYoycHTQl/+62OCV7WGf8Kedg==
+"@pluffa/node@^0.2.0":
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/@pluffa/node/-/node-0.2.0.tgz#0671ece4eab1780ffb6a8b693bb377e0105cde14"
+  integrity sha512-94zHY3FmMI4S7UWv7ygdCI4M135UUpXC6jOhGMUE8RebM5sb6ncxlaVw6PnsCEH+OQ+nihVPwOsf+EcrsxyxJg==
   dependencies:
-    "@pluffa/build-tools" "^0.1.0"
+    "@pluffa/build-tools" "^0.2.0"
     "@pluffa/crawl" "^0.1.0"
     "@pluffa/env" "^0.1.0"
     "@pluffa/node-render" "^0.1.0"
@@ -1425,6 +1425,11 @@
   version "7.0.11"
   resolved "https://registry.yarnpkg.com/@types/json-schema/-/json-schema-7.0.11.tgz#d421b6c527a3037f7c84433fd2c4229e016863d3"
   integrity sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==
+
+"@types/lodash@^4.14.182":
+  version "4.14.182"
+  resolved "https://registry.yarnpkg.com/@types/lodash/-/lodash-4.14.182.tgz#05301a4d5e62963227eaafe0ce04dd77c54ea5c2"
+  integrity sha512-/THyiqyQAP9AfARo4pF+aCGcyiQ94tX/Is2I7HofNRqoYLgN1PBoOWu2/zTA5zMxzP5EFutMtWtGAFRKUe961Q==
 
 "@types/mdast@^3.0.0":
   version "3.0.10"
@@ -3003,6 +3008,11 @@ lodash.uniq@^4.5.0:
   resolved "https://registry.yarnpkg.com/lodash.uniq/-/lodash.uniq-4.5.0.tgz#d0225373aeb652adc1bc82e4945339a842754773"
   integrity sha512-xfBaXQd9ryd9dlSDvnvI0lvxfLJlYAZzXomUYzLKtUeOQvOP5piqAWuGtrhWeqaXK9hhoM/iyJc5AV+XfsX3HQ==
 
+lodash@^4.17.21:
+  version "4.17.21"
+  resolved "https://registry.yarnpkg.com/lodash/-/lodash-4.17.21.tgz#679591c564c3bffaae8454cf0b3df370c3d6911c"
+  integrity sha512-v2kDEe57lecTulaDIuNTPy3Ry4gLGJ6Z1O3vE1krgXZNrsQ+LFTGHVxVjcXPs17LhbZVGedAJv8XZ1tvj5FvSg==
+
 loose-envify@^1.1.0, loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://registry.yarnpkg.com/loose-envify/-/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
@@ -3607,10 +3617,10 @@ pkg-dir@^4.1.0:
   dependencies:
     find-up "^4.0.0"
 
-pluffa@^0.1.0:
-  version "0.1.0"
-  resolved "https://registry.yarnpkg.com/pluffa/-/pluffa-0.1.0.tgz#b808b093fb2f0b4ab1f82e980e2a1ba0ab6457da"
-  integrity sha512-zkYPTSoKzXKXZRP1xsbIJi44cCGKkUFZMI31RghsLfjNO2VO/yMgBS+EYBymKKoDnsc2Ms910dACXXqIQk6sDw==
+pluffa@^0.2.0:
+  version "0.2.0"
+  resolved "https://registry.yarnpkg.com/pluffa/-/pluffa-0.2.0.tgz#b852567e90319e029b5cf4a0856edcd7dca71692"
+  integrity sha512-zrSRuZ8jPymnw/YI5VNpqMrLVhZJC/ivu526ROj1VWOSIEBywcvzm9H5gAG3h5i3haSw+wEU1euygTOiWQhiUw==
   dependencies:
     chalk "^5.0.1"
     commander "^9.3.0"

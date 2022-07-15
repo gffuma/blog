@@ -19,7 +19,7 @@ export default function App() {
   const posts = usePosts()
   return (
     <div>
-      <div className="home-banner">
+      <div className="hban">
         <Markdown md={tagline} />
       </div>
       <div className='posts-list'>

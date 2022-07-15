@@ -1,16 +1,17 @@
 import './Layout.scss'
 import { Suspense } from 'react'
-import { Link, Outlet } from 'react-router-dom'
+import { Link, Outlet, useMatch } from 'react-router-dom'
 import ThemeSwitcher from '../ThemeSwitcher'
 
 export default function Layout() {
+  const isHomePage = Boolean(useMatch('/'))
   return (
     <Suspense fallback={<div>Loading...</div>}>
       <div className="container">
         <header>
           <div className="sidebar">
             <Link to="/" className="home-link">
-              <h1>Gio Va</h1>
+              {isHomePage ? <h1>Gio Va</h1> : <h2>Gio Va</h2>}
             </Link>
             <div className="sidebar-links">
               <a href="https://github.com/gffuma">GitHub</a>
