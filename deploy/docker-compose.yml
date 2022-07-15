@@ -1,0 +1,33 @@
+version: '3'
+
+services:
+  server:
+    image: nginx:1.19.3-alpine
+    restart: always
+    volumes:
+      - ./nginx.conf:/etc/nginx/conf.d/default.conf
+      - ./web:/var/www
+    labels:
+      # Use the "traefik" network talk to this container
+      - traefik.docker.network=traefik
+      # Define exposed services
+      - traefik.http.services.BLOG_SERVER.loadbalancer.server.port=80 # Forward traffic from outside to port 80
+      - traefik.http.services.BLOG_SERVER.loadbalancer.server.scheme=http # Forward traffic in http
+      - traefik.http.services.BLOG_SERVER.loadbalancer.passhostheader=true # Pass the HOST header along
+      # HTTP
+      - traefik.http.routers.BLOG_WEB.entrypoints=web
+      - traefik.http.routers.BLOG_WEB.middlewares=redirect@file
+      - traefik.http.routers.BLOG_WEB.rule=Host(`giova.fun`)
+      # HTTPS
+      - traefik.http.routers.BLOG_WEB_HTTPS.entrypoints=websecure
+      - traefik.http.routers.BLOG_WEB_HTTPS.tls=true
+      - traefik.http.routers.BLOG_WEB_HTTPS.tls.certresolver=letsencrypt
+      - traefik.http.routers.BLOG_WEB_HTTPS.rule=Host(`giova.fun`)
+      - traefik.http.routers.BLOG_WEB_HTTPS.service=BLOG_SERVER
+    networks:
+      - traefik
+      - default
+
+networks:
+  traefik:
+    external: true

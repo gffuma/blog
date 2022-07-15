@@ -5,3 +5,6 @@
 ```sh
 yarn dev
 ```
+
+## LICENSE
+MIT

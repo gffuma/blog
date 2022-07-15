@@ -2,6 +2,8 @@
   "$schema": "https://cdn.giova.fun/pluffa/schema.json",
   "runtime": "node",
   "clientEntry": "./src/index.tsx",
+  "exitStaticizeOnError": true,
+  "statikDataDir": false,
   "productionClientSourceMap": false,
   "serverComponent": "./src/StaticApp.tsx",
   "skeletonComponent": "./src/skeleton/Skeleton.tsx",
