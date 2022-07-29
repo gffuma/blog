@@ -16,7 +16,7 @@ while (daysLeft) {
 \`\`\`
 `
 
-export default function App() {
+export default function Home() {
   const posts = usePosts()
   return (
     <div>

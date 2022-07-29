@@ -1,5 +1,5 @@
 # Gio Va Blog
-> Built in JS with not JS
+> Built in JS with no JS
 
 ## DEV
 ```sh
