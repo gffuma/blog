@@ -70,7 +70,7 @@ async function grabCurrentWifiSSID() {
 }
 ```
 
-The rest of script is trivial if `grabCurrentWifiSSID()` dont' fail check
+The rest of script is trivial if `grabCurrentWifiSSID()` don't fail check
 if the SSID is from my home or from my office and write the information
 in a JSON with the related date.
 
