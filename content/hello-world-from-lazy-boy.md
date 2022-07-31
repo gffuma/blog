@@ -5,30 +5,28 @@ slug: hello-world-from-lazy-boy
 date: 2022-07-15
 ---
 
-Hi everyone this is my first blog post!
+Hi everyone, this is my first blog post!
 
-My name is Giovanni i am Italian and yes i am a programmer.
-I love been a programmer.
+I'm Giovanni aka [gffuma](https://github.com/gffuma), I come from Italy and yes, of course I am a programmer.
+I love being a programmer.
 
-I also be a veeery lazy boy, but i think that beeing lazy, as a programmer,
-is a skill rather then a defect.
+I'm also a **very** **very** lazy boy, but for me being lazy, as a programmer,
+is a skill rather then a fault.
 
 > "I choose a lazy person to do a hard job. Because a lazy person will find an easy way to do it."
 >
 > *Bill Gates (maybe)*
 
 
-I am very big fan of [hacker scripts](https://www.jitbit.com/alexblog/249-now-thats-what-i-call-a-hacker/),
-In this blog post i show you i little trick of which I am very proud.
-
-Yes this born because i am a very lazy boy.
+I'm a big fan of [hacker scripts](https://www.jitbit.com/alexblog/249-now-thats-what-i-call-a-hacker/),
+In this blog post I'll show you a little *hacker* trick I'm very proud of.
 
 ---
 
-Some times ago i had to to keep track of which days i worked from home and which
-days i worked from office.
+Some time ago I was asked to keep track of which days I worked from home and which
+days I worked in the office.
 
-This is seems a simple task but, again, i am a very lazy boy ... but i am also an **h4ck3r** 🏴‍☠️.
+This could seem a simple task, but, remember, I'm a very lazy boy... and I'm also an **h4ck3r** 🏴‍☠️.
 
 So i came up with this solution.
 When i work from home and when from office?
