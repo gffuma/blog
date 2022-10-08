@@ -1,5 +1,5 @@
 import dayjs from 'dayjs'
-import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet-async'
 import { useParams } from 'react-router-dom'
 import Markdown from '../../components/Markdown'
 import { usePost } from '../../hooks/posts'
