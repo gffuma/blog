@@ -1,36 +1,22 @@
 import './index.scss'
 import ReactDOM from 'react-dom/client'
-import { QueryClient, hydrate, QueryClientProvider } from 'react-query'
-import { BrowserRouter } from 'react-router-dom'
-import App from './App'
 import { StrictMode } from 'react'
+import { HelmetProvider } from 'react-helmet-async'
+import { BrowserRouter } from 'react-router-dom'
+import { ResourceCacheContext } from './cache'
+import App from './App'
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      cacheTime: Infinity,
-      refetchOnWindowFocus: false,
-      refetchOnReconnect: false,
-      refetchInterval: false,
-      refetchIntervalInBackground: false,
-      refetchOnMount: false,
-      staleTime: Infinity,
-      suspense: true,
-      retry: false,
-    },
-  },
-})
-
-hydrate(queryClient, (window as any).__INITIAL_DATA__)
-delete (window as any).__INITIAL_DATA__
+const cache = new Map()
 
 ReactDOM.hydrateRoot(
   document.getElementById('root')!,
   <StrictMode>
-    <QueryClientProvider client={queryClient}>
-      <BrowserRouter>
-        <App />
-      </BrowserRouter>
-    </QueryClientProvider>
+    <HelmetProvider>
+      <ResourceCacheContext.Provider value={cache}>
+        <BrowserRouter>
+          <App />
+        </BrowserRouter>
+      </ResourceCacheContext.Provider>
+    </HelmetProvider>
   </StrictMode>
 )

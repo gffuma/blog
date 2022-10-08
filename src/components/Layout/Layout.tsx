@@ -6,7 +6,7 @@ import ThemeSwitcher from '../ThemeSwitcher'
 export default function Layout() {
   const isHomePage = Boolean(useMatch('/'))
   return (
-    <Suspense fallback={<div>Loading...</div>}>
+    <Suspense fallback={<span />}>
       <div className="container">
         <header>
           <div className="sidebar">

@@ -1,8 +1,8 @@
 import './Home.scss'
 import Markdown from '../../components/Markdown'
-import { usePosts } from '../../hooks/posts'
 import PostListItem from '../../components/PostListItem'
-import { Helmet } from 'react-helmet'
+import { Helmet } from 'react-helmet-async'
+import { usePosts } from '../../hooks/posts'
 
 const tagline = `
 \`\`\`js
@@ -20,7 +20,7 @@ export default function Home() {
   const posts = usePosts()
   return (
     <div>
-      <Helmet defer={false}>
+      <Helmet>
         <title>Gio Va</title>
         <meta
           name="description"
