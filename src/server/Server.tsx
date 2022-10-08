@@ -73,6 +73,7 @@ export const getServerData: GetServerData = async ({ entrypoints }) => {
   return {
     data: {
       cache,
+      helmetContext,
     },
     injectBeforeHeadClose: () =>
       (['title', 'meta', 'link'] as const)
