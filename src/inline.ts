@@ -1,6 +1,8 @@
-function setPageTheme(theme) {
-  const myHtml = document.querySelector('html')
-  const metaTheme = document.querySelector('meta[name="theme-color"]')
+type Theme = 'dark' | 'light'
+
+function setPageTheme(theme: Theme) {
+  const myHtml = document.querySelector('html')!
+  const metaTheme = document.querySelector('meta[name="theme-color"]')!
   if (theme === 'dark') {
     metaTheme.setAttribute('content', '#333842')
   } else {
@@ -9,9 +11,9 @@ function setPageTheme(theme) {
   myHtml.setAttribute('data-theme', theme)
 }
 
-function setButtonTheme(theme) {
-  let emoji
-  const themeCtrl = document.querySelector('.theme-switcher')
+function setButtonTheme(theme: Theme) {
+  let emoji: string
+  const themeCtrl = document.querySelector('.theme-switcher')!
   if (theme === 'dark') {
     emoji = '🌝'
   } else {
@@ -20,11 +22,11 @@ function setButtonTheme(theme) {
   themeCtrl.textContent = emoji
 }
 
-function switchTheme() {
-  const myHtml = document.querySelector('html')
+window.switchTheme = () => {
+  const myHtml = document.querySelector('html')!
   myHtml.classList.add('animation')
   const currentTheme = myHtml.getAttribute('data-theme')
-  let nextTheme
+  let nextTheme: Theme
   if (currentTheme === 'dark') {
     nextTheme = 'light'
   } else {
@@ -38,17 +40,17 @@ function switchTheme() {
   } catch (_) {}
 }
 
-function initThemeSwitcher() {
-  const themeCtrl = document.querySelector('.theme-switcher')
+window.initThemeSwitcher = () => {
+  const themeCtrl = document.querySelector('.theme-switcher')!
   themeCtrl.classList.remove('theme-switcher-hidden')
   if (window.__theme) {
     setButtonTheme(window.__theme)
   }
 }
 
-;(function () {
-  window.__theme = window.localStorage.getItem('theme')
-  if (window.__theme) {
-    setPageTheme(window.__theme)
-  }
-})()
+try {
+  window.__theme = window.localStorage.getItem('theme') as Theme
+} catch (_) {}
+if (window.__theme) {
+  setPageTheme(window.__theme)
+}

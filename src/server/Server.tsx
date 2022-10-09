@@ -2,7 +2,7 @@ import fs from 'node:fs/promises'
 import path from 'node:path'
 import { HelmetProvider, FilledContext } from 'react-helmet-async'
 import { GetServerData } from '@pluffa/node-render'
-import { useSSRData, useSSRUrl } from '@pluffa/ssr'
+import { useSSRData, useSSRUrl, getScripts } from '@pluffa/ssr'
 import { StaticRouter } from 'react-router-dom/server'
 import { ResourceCache, ResourceCacheContext } from '../cache'
 import App from '../App'
@@ -56,14 +56,29 @@ export const getServerData: GetServerData = async ({ entrypoints }) => {
     injectHead += __lazyInlinceCss
   }
 
-  // Inline JS
-  if (!__lazyInlineJS) {
-    __lazyInlineJS = await fs.readFile(
-      path.resolve(process.cwd(), 'src/inline.js'),
-      'utf-8'
-    )
+  if (process.env.PLUFFA_BUILD_CLIENT_PATH) {
+    // Inline JS
+    if (!__lazyInlineJS) {
+      __lazyInlineJS = await Promise.all(
+        entrypoints.inline
+          .filter((e) => e.endsWith('.js'))
+          .map((e) =>
+            fs
+              .readFile(
+                path.join(process.env.PLUFFA_BUILD_CLIENT_PATH!, e),
+                'utf-8'
+              )
+              .then((js) => `<script>${js}</script>`)
+          )
+      ).then((strs) => strs.join(''))
+    }
+    injectHead += __lazyInlineJS
+  } else {
+    // Dev webpack JS
+    injectHead += ['inline', 'runtime']
+      .map((e) => getScripts(entrypoints, e))
+      .join('')
   }
-  injectHead += `<script>${__lazyInlineJS}</script>`
 
   // Bootstrap JS
   if (process.env.NODE_ENV === 'production') {

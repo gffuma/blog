@@ -1239,10 +1239,10 @@
     "@pluffa/ssr" "^0.1.0"
     stream-buffers "^3.0.2"
 
-"@pluffa/node@^0.8.1":
-  version "0.8.1"
-  resolved "https://registry.yarnpkg.com/@pluffa/node/-/node-0.8.1.tgz#eb5e1768dcf451d1f035fa4c9ef4beee9bca846a"
-  integrity sha512-QI5qZPcEHr2rp8WNYvy/W4QK5PWNaMxlQrDQoZBqpNehXz//54zqgjFMm11a1od/yux9bSByLC2c153Tgwp1MQ==
+"@pluffa/node@^0.8.2":
+  version "0.8.2"
+  resolved "https://registry.yarnpkg.com/@pluffa/node/-/node-0.8.2.tgz#e7751e75ac28ee2f7a40f1108dac0a28645d940b"
+  integrity sha512-v/1Hyf8c5G0MTQQ2X6Qk2vfGYIrQRTwLE+RXbymXIv2A6uvyMSonQWbT61XhHjTVph3R3g7OFy8OKwllDA4K6w==
   dependencies:
     "@pluffa/build-tools" "^0.5.0"
     "@pluffa/crawl" "^0.2.0"
@@ -4425,11 +4425,6 @@ qs@6.10.3:
   dependencies:
     side-channel "^1.0.4"
 
-querystring@^0.2.0:
-  version "0.2.1"
-  resolved "https://registry.yarnpkg.com/querystring/-/querystring-0.2.1.tgz#40d77615bb09d16902a85c3e38aa8b5ed761c2dd"
-  integrity sha512-wkvS7mL/JMugcup3/rMitHmd9ecIGd2lhFhK9N3UUQ450h66d1r3Y9nvXzQAW1Lq+wyx61k/1pfKS5KuKiyEbg==
-
 randombytes@^2.1.0:
   version "2.1.0"
   resolved "https://registry.yarnpkg.com/randombytes/-/randombytes-2.1.0.tgz#df6f84372f0270dc65cdf6291349ab7a473d4f2a"
@@ -5228,13 +5223,12 @@ webpack-dev-middleware@^5.3.3:
     schema-utils "^4.0.0"
 
 webpack-hot-middleware@^2.25.1:
-  version "2.25.1"
-  resolved "https://registry.yarnpkg.com/webpack-hot-middleware/-/webpack-hot-middleware-2.25.1.tgz#581f59edf0781743f4ca4c200fd32c9266c6cf7c"
-  integrity sha512-Koh0KyU/RPYwel/khxbsDz9ibDivmUbrRuKSSQvW42KSDdO4w23WI3SkHpSUKHE76LrFnnM/L7JCrpBwu8AXYw==
+  version "2.25.2"
+  resolved "https://registry.yarnpkg.com/webpack-hot-middleware/-/webpack-hot-middleware-2.25.2.tgz#f7f936f3871d8c4eb95ecdf23a34e9cefe9806e8"
+  integrity sha512-CVgm3NAQyfdIonRvXisRwPTUYuSbyZ6BY7782tMeUzWOO7RmVI2NaBYuCp41qyD4gYCkJyTneAJdK69A13B0+A==
   dependencies:
     ansi-html-community "0.0.8"
     html-entities "^2.1.0"
-    querystring "^0.2.0"
     strip-ansi "^6.0.0"
 
 webpack-node-externals@^3.0.0:

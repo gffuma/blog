@@ -3,7 +3,7 @@ import './ThemeSwitcher.css'
 
 export default function ThemeSwitcher() {
   useEffect(() => {
-    (window as any).initThemeSwitcher()
+    window.initThemeSwitcher()
   }, [])
 
   return (

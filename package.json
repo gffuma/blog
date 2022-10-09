@@ -18,7 +18,7 @@
     "rehype-highlight": "^5.0.2"
   },
   "devDependencies": {
-    "@pluffa/node": "^0.8.1",
+    "@pluffa/node": "^0.8.2",
     "@types/node": "^18.0.4",
     "@types/react": "^18.0.15",
     "@types/react-dom": "^18.0.6",
