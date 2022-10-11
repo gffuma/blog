@@ -1,4 +1,6 @@
-type Theme = 'dark' | 'light'
+import { Theme, DEFAULT_THEME } from './theme'
+
+let __theme: Theme = DEFAULT_THEME
 
 function setPageTheme(theme: Theme) {
   const myHtml = document.querySelector('html')!
@@ -11,46 +13,64 @@ function setPageTheme(theme: Theme) {
   myHtml.setAttribute('data-theme', theme)
 }
 
-function setButtonTheme(theme: Theme) {
-  let emoji: string
-  const themeCtrl = document.querySelector('.theme-switcher')!
-  if (theme === 'dark') {
-    emoji = '🌝'
-  } else {
-    emoji = '🌞'
+class ThemeSwitcher extends HTMLElement {
+  root: ShadowRoot
+  button: HTMLButtonElement
+
+  constructor() {
+    super()
+    this.root = this.attachShadow({ mode: 'open' })
+    this.button = document.createElement('button')
+    this.button.classList.add('theme-switcher')
+    this.button.part.add('button')
+    this.root.append(this.button)
+    this.setButtonTheme(__theme)
   }
-  themeCtrl.textContent = emoji
+
+  setButtonTheme(theme: Theme) {
+    let emoji: string
+    if (theme === 'dark') {
+      emoji = '🌝'
+    } else {
+      emoji = '🌞'
+    }
+    this.button.textContent = emoji
+  }
+
+  switchTheme = () => {
+    const myHtml = document.querySelector('html')!
+    myHtml.classList.add('animation')
+    const currentTheme = myHtml.getAttribute('data-theme')
+    let nextTheme: Theme
+    if (currentTheme === 'dark') {
+      nextTheme = 'light'
+    } else {
+      nextTheme = 'dark'
+    }
+    setPageTheme(nextTheme)
+    this.setButtonTheme(nextTheme)
+    try {
+      window.localStorage.setItem('theme', nextTheme)
+    } catch (_) {}
+  }
+
+  connectedCallback() {
+    this.button.addEventListener('click', this.switchTheme)
+  }
+
+  disconnectedCallback() {
+    this.button.removeEventListener('click', this.switchTheme)
+  }
 }
 
-window.switchTheme = () => {
-  const myHtml = document.querySelector('html')!
-  myHtml.classList.add('animation')
-  const currentTheme = myHtml.getAttribute('data-theme')
-  let nextTheme: Theme
-  if (currentTheme === 'dark') {
-    nextTheme = 'light'
-  } else {
-    nextTheme = 'dark'
-  }
-  setPageTheme(nextTheme)
-  setButtonTheme(nextTheme)
-  window.__theme = nextTheme
-  try {
-    window.localStorage.setItem('theme', nextTheme)
-  } catch (_) {}
-}
+customElements.define('theme-switcher', ThemeSwitcher)
 
-window.initThemeSwitcher = () => {
-  const themeCtrl = document.querySelector('.theme-switcher')!
-  themeCtrl.classList.remove('theme-switcher-hidden')
-  if (window.__theme) {
-    setButtonTheme(window.__theme)
-  }
-}
-
+// RUNNING AT VERY START OF THE DOCUMENT
+let __preferredTheme: Theme | null = null
 try {
-  window.__theme = window.localStorage.getItem('theme') as Theme
+  __preferredTheme = window.localStorage.getItem('theme') as Theme
 } catch (_) {}
-if (window.__theme) {
-  setPageTheme(window.__theme)
+if (__preferredTheme) {
+  __theme = __preferredTheme
+  setPageTheme(__theme)
 }

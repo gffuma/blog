@@ -1,4 +1,4 @@
-.theme-switcher {
+theme-switcher::part(button) {
   background-color: transparent;
   padding: 0;
   border: 0px;
@@ -6,7 +6,4 @@
   outline: none;
   font-size: 2rem;
   cursor: pointer;
-}
-.theme-switcher-hidden {
-  display: none;
 }

@@ -35,7 +35,6 @@ export const getServerData: GetServerData = async ({ entrypoints }) => {
   const helmetContext = {} as FilledContext
 
   let injectHead = ''
-  let injectBody = ''
 
   // Inline CSS
   if (process.env.PLUFFA_BUILD_CLIENT_PATH && !__lazyInlinceCss) {
@@ -80,11 +79,6 @@ export const getServerData: GetServerData = async ({ entrypoints }) => {
       .join('')
   }
 
-  // Bootstrap JS
-  if (process.env.NODE_ENV === 'production') {
-    injectBody += `<script>initThemeSwitcher();</script>`
-  }
-
   return {
     data: {
       cache,
@@ -96,6 +90,5 @@ export const getServerData: GetServerData = async ({ entrypoints }) => {
           helmetContext.helmet ? helmetContext.helmet[k].toString() : ''
         )
         .join('') + injectHead,
-    injectBeforeBodyClose: () => injectBody,
   }
 }

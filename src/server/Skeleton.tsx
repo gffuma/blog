@@ -1,8 +1,9 @@
 import { Scripts, Root } from '@pluffa/ssr/skeleton'
+import { DEFAULT_THEME } from '../theme'
 
 export default function Skeleton() {
   return (
-    <html lang="en" data-theme="dark">
+    <html lang="en" data-theme={DEFAULT_THEME}>
       <head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
