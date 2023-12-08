@@ -5,7 +5,8 @@
     "dev": "pluffa dev",
     "build": "pluffa build",
     "start": "pluffa start",
-    "staticize": "pluffa staticize"
+    "staticize": "pluffa staticize",
+    "build-static": "yarn build && yarn staticize && rm -r ./build/static"
   },
   "dependencies": {
     "dayjs": "^1.11.3",
@@ -36,5 +37,6 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  }
+  },
+  "packageManager": "yarn@1.22.19"
 }

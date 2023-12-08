@@ -3,7 +3,7 @@ name: Build and Deploy
 on:
   push:
     branches:
-      - master
+      - legacy_docker
 env:
   DEPLOY_HOST: giova.fun
   DEPLOY_SSH_USER: root
